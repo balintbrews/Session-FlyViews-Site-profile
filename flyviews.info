@@ -1,0 +1,24 @@
+name = FlyViews Source
+description = Presents how to implement a Views query backend plugin, Views handlers and CTools plugins to display external content on-the-fly.
+core = 7.x
+theme = bartik
+
+; Core
+dependencies[] = dblog
+dependencies[] = image
+dependencies[] = menu
+
+; Contrib modules
+dependencies[] = admin_menu
+dependencies[] = admin_menu_toolbar
+dependencies[] = ctools
+dependencies[] = devel
+dependencies[] = diff
+dependencies[] = features
+dependencies[] = strongarm
+dependencies[] = views
+dependencies[] = views_ui
+
+; Features
+dependencies[] = general_configuration
+

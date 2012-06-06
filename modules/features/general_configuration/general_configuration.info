@@ -1,0 +1,8 @@
+name = General Configuration
+description = General site configuration.
+core = 7.x
+package = FlyViews Source
+php = 5.2.4
+dependencies[] = features
+features[features_api][] = api:1
+features[user_permission][] = access content
