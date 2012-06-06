@@ -1,7 +1,7 @@
 name = General Configuration
 description = General site configuration.
 core = 7.x
-package = FlyViews Source
+package = FlyViews
 php = 5.2.4
 dependencies[] = features
 features[features_api][] = api:1
