@@ -1,13 +1,13 @@
 <?php
 /**
- * @file source_flyviews.install
- * Installation file for the FlyViews Source installation profile.
+ * @file flyviews.install
+ * Installation file for the FlyViews installation profile.
  */
 
 /**
  * Implements hook_install().
  */
-function source_flyviews_install() {
+function flyviews_install() {
   theme_enable(array('seven'));
   // Set Seven as the admin theme.
   variable_set('admin_theme', 'seven');

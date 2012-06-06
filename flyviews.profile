@@ -1,6 +1,6 @@
 <?php
 
 /**
- * @file source_flyviews.profile
+ * @file flyviews.profile
  */
 

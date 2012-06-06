@@ -1,4 +1,4 @@
-name = FlyViews Source
+name = FlyViews
 description = Presents how to implement a Views query backend plugin, Views handlers and CTools plugins to display external content on-the-fly.
 core = 7.x
 theme = bartik
