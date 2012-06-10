@@ -10,8 +10,8 @@
  * All public methods return $this and can be chained together, except the execute(),
  * which returns the response data.
  *
- * Possible and recommended improvement: implement a caching logic.
- * See the Last.FM module for a smart example:
+ * Possible and recommended improvement: implementing a caching logic.
+ * See Last.FM module for a smart example:
  * http://drupalcode.org/project/lastfm.git/blob/refs/heads/7.x-2.x:/lastfm.api.inc
  */
 class DrupalConsAPIRequest {
@@ -34,7 +34,7 @@ class DrupalConsAPIRequest {
   }
 
   /**
-   * Set an argument for the request.
+   * Sets an argument for the request.
    */
   public function addArgument($key, $value) {
     $this->arguments[$key] = $value;
@@ -42,8 +42,7 @@ class DrupalConsAPIRequest {
   }
 
   /**
-   * Executes the request. The result of the call can be retrieved with
-   * using drupalconsAPIRequest->get_response().
+   * Executes the request. Returns the response data.
    */
   public function execute() {
     $options = array(
