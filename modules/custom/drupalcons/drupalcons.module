@@ -5,3 +5,32 @@
  * Demo module for Session #FlyViews. Views and Page Manager (CTools) integration with the #FlyViews Source website.
  */
 
+define('DRUPALCONS_DEFAULT_API_URL', 'http://sourcepoint-flyviews.loc/api/drupalcon');
+
+/**
+ * Implements hook_menu().
+ */
+function drupalcons_menu() {
+  $items = array();
+  $items['admin/config/services/drupalcons'] = array(
+    'title' => 'DrupalCons API settings',
+    'description' => t('Settings for DrupalCons API, eg. endpoint URL etc.'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('drupalcons_admin_form'),
+    'access arguments' => array('administer drupalcons'),
+    'file' => 'drupalcons.admin.inc',
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function drupalcons_permission() {
+  return array(
+    'administer drupalcons' => array(
+      'title' => t('Administer DrupalCons'),
+    ),
+  );
+}
+
