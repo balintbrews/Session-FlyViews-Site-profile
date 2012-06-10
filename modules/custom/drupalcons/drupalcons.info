@@ -3,3 +3,5 @@ description = Demo module for Session #FlyViews. Views and Page Manager (CTools)
 core = 7.x
 package = FlyViews
 
+files[] = drupalcons.api.inc
+
