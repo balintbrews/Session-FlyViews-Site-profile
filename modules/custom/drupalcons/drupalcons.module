@@ -1,0 +1,7 @@
+<?php
+
+/**
+ * @file drupalcons.module
+ * Demo module for Session #FlyViews. Views and Page Manager (CTools) integration with the #FlyViews Source website.
+ */
+

@@ -1,0 +1,5 @@
+name = DrupalCons
+description = Demo module for Session #FlyViews. Views and Page Manager (CTools) integration with the #FlyViews Source website.
+core = 7.x
+package = FlyViews
+

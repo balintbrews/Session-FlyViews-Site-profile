@@ -19,6 +19,9 @@ dependencies[] = strongarm
 dependencies[] = views
 dependencies[] = views_ui
 
+; Custom modules
+dependencies[] = drupalcons
+
 ; Features
 dependencies[] = general_configuration
 
