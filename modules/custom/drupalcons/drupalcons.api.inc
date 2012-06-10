@@ -36,6 +36,14 @@ class drupalconsAPIRequest {
   }
 
   /**
+   * Set an argument for the request.
+   */
+  public function set_argument($key, $value) {
+    $this->arguments[$key] = $value;
+    return $this;
+  }
+
+  /**
    * Executes the request. The result of the call can be retrieved with
    * using drupalconsAPIRequest->get_response().
    */

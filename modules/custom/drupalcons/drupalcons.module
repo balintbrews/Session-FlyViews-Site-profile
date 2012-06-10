@@ -46,8 +46,13 @@ function drupalcons_permission() {
  */
 function drupalcons_api_test_page() {
   $request = new drupalconsAPIRequest();
-  $request->execute();
-  dpm($request->get_response());
+  $result = $request
+    ->set_argument('year', 2005)
+    ->set_argument('attendees_op', '=')
+    ->set_argument('attendees', array('value' => 100))
+    ->execute()
+    ->get_response();
+  dpm($result);
   return t('Testing...');
 }
 
