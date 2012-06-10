@@ -22,7 +22,7 @@ class DrupalConsAPIRequest {
   // Flag to designate whether we are in debug mode.
   private $debug_mode;
 
-  // API call arguments. Use drupalconsAPIRequest->addArgument() to set.
+  // API call arguments. Use DrupalConsAPIRequest->addArgument() to set.
   private $arguments = array();
 
   /**
