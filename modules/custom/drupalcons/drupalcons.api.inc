@@ -7,13 +7,14 @@
 /**
  * Simple class for puttig together a URL for the API call, and doing an HTTP request
  * for retrieving information about DrupalCons.
- * All public methods return $this and can be chained together.
+ * All public methods return $this and can be chained together, except the execute(),
+ * which returns the response data.
  *
  * Possible and recommended improvement: implement a caching logic.
  * See the Last.FM module for a smart example:
  * http://drupalcode.org/project/lastfm.git/blob/refs/heads/7.x-2.x:/lastfm.api.inc
  */
-class drupalconsAPIRequest {
+class DrupalConsAPIRequest {
 
   // Default API URL for the request.
   private $api_url;
@@ -23,9 +24,6 @@ class drupalconsAPIRequest {
 
   // API arguments. Use drupalconsAPIRequest->set_argument() to set.
   private $arguments = array();
-
-  // API response, can be retrieved by drupalconsAPIRequest->get_response().
-  private $response;
 
   /**
    * Constructor.
@@ -38,7 +36,7 @@ class drupalconsAPIRequest {
   /**
    * Set an argument for the request.
    */
-  public function set_argument($key, $value) {
+  public function addArgument($key, $value) {
     $this->arguments[$key] = $value;
     return $this;
   }
@@ -56,8 +54,7 @@ class drupalconsAPIRequest {
     if ($this->debug_mode) {
       drupal_set_message(t('Request URL: !url', array('!url' => $request_url)));
     }
-    $this->response = $this->request($request_url);
-    return $this;
+    return $this->request($request_url);
   }
 
   /**
@@ -79,13 +76,6 @@ class drupalconsAPIRequest {
       return FALSE;
     }
     return $data;
-  }
-
-  /**
-   * Returns the API response.
-   */
-  public function get_response() {
-    return $this->response;
   }
 
 }
