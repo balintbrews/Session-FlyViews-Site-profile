@@ -52,7 +52,7 @@ class DrupalConsAPIRequest {
     );
     $request_url = url($this->api_url, $options);
     if ($this->debug_mode) {
-      drupal_set_message(t('Request URL: !url', array('!url' => $request_url)));
+      drupal_set_message(t('Request URL: !url', array('!url' => urldecode($request_url))));
     }
     return $this->request($request_url);
   }
