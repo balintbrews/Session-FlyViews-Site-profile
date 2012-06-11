@@ -74,7 +74,18 @@ class DrupalConsAPIRequest {
       watchdog('drupalcons', 'Error !code received: %message', array('!code' => $data->error, '%message' => $data->message), WATCHDOG_ERROR);
       return FALSE;
     }
-    return $data;
+    return $this->parse($data);
+  }
+
+  /**
+   * Parses the response data.
+   */
+  private function parse($data) {
+    $parsed_data = array();
+    foreach ($data->drupalcons as $item) {
+      $parsed_data[$item->drupalcon->id] = $item->drupalcon;
+    }
+    return $parsed_data;
   }
 
 }
