@@ -54,7 +54,7 @@ function drupalcons_views_api() {
  * Page callback; API test page.
  */
 function drupalcons_api_test_page() {
-  $request = new drupalconsAPIRequest();
+  $request = new DrupalConsAPIRequest();
   $result = $request
     ->addArgument('year', 2005)
     ->addArgument('attendees_op', '=')
