@@ -11,17 +11,17 @@ function drupalcons_views_data() {
   $data = array();
 
   // Base table definition.
-  $data['drupalcons']['table'] = array(
-    'group' => t('DrupalCons'),
+  $data['drupalcon']['table'] = array(
+    'group' => t('DrupalCon'),
     'base' => array(
-      'title' => t('DrupalCons'),
+      'title' => t('DrupalCon'),
       'help' => t('Information about DrupalCons fetched from an external website.'),
       'query class' => 'drupalcons_query',
     ),
   );
 
   // ID
-  $data['drupalcons']['id'] = array(
+  $data['drupalcon']['id'] = array(
     'title' => t('ID'),
     'help' => t('Identifier of the DrupalCon.'),
     // Information for displaying the ID.
