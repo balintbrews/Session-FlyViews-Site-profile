@@ -12,8 +12,19 @@ class drupalcons_views_handler_field_drupalcon extends views_handler_field {
 
   function init(&$view, &$options) {
     parent::init($view, $options);
+
     if (!empty($this->options['link_to_drupalcon'])) {
-      $this->additional_fields['id'] = array('table' => 'drupalcons', 'field' => 'id');
+
+      // This is a small workaround here. Normally, you have to add an additional
+      // field here, if you need the information from it. In this case, if we render
+      // the field output as a link to the DrupalCon page, we always need the ID
+      // field. But our response after the API call always contains every "field",
+      // so what we need is only an alias, since the views_handler_field::get_values()
+      // method returns values based on the aliases. These aliases normally are created
+      // by the views_handler_field::add_additional_fields() method, which should be
+      // invoked in the query() method. But as it mentioned above, we don't add an
+      // additional field, so we need to take care about the alias ourselves.
+      $this->aliases['id'] = 'id';
     }
   }
 
@@ -43,7 +54,7 @@ class drupalcons_views_handler_field_drupalcon extends views_handler_field {
   function render_link($data, $values) {
     if (!empty($this->options['link_to_drupalcon']) && $data !== NULL && $data !== '') {
       $this->options['alter']['make_link'] = TRUE;
-      $this->options['alter']['path'] = "drupalcon/" . $this->get_value($values);
+      $this->options['alter']['path'] = "drupalcon/" . $this->get_value($values, 'id');
     }
     return $data;
   }
