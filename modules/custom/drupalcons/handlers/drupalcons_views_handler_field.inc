@@ -1,14 +1,14 @@
 <?php
 
 /**
- * @file drupalcons_views_handler_field_drupalcon.inc
+ * @file drupalcons_views_handler_field.inc
  * Basic "DrupalCon" field handler.
  */
 
 /**
  * Field handler to provide simple renderer that allows linking to a DrupalCon.
  */
-class drupalcons_views_handler_field_drupalcon extends views_handler_field {
+class drupalcons_views_handler_field extends views_handler_field {
 
   function init(&$view, &$options) {
     parent::init($view, $options);

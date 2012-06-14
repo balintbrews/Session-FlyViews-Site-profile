@@ -26,7 +26,7 @@ function drupalcons_views_data() {
     'help' => t('Identifier of the DrupalCon.'),
     // Information for displaying the ID.
     'field' => array(
-      'handler' => 'drupalcons_views_handler_field_drupalcon',
+      'handler' => 'drupalcons_views_handler_field',
     ),
   );
 
@@ -36,7 +36,7 @@ function drupalcons_views_data() {
     'help' => t('City of the DrupalCon.'),
     // Information for displaying the city.
     'field' => array(
-      'handler' => 'drupalcons_views_handler_field_drupalcon',
+      'handler' => 'drupalcons_views_handler_field',
     ),
   );
 
@@ -46,7 +46,7 @@ function drupalcons_views_data() {
     'help' => t('Country of the DrupalCon.'),
     // Information for displaying the country.
     'field' => array(
-      'handler' => 'drupalcons_views_handler_field_drupalcon',
+      'handler' => 'drupalcons_views_handler_field',
     ),
   );
 
@@ -56,7 +56,7 @@ function drupalcons_views_data() {
     'help' => t('Year of the DrupalCon.'),
     // Information for displaying the year.
     'field' => array(
-      'handler' => 'drupalcons_views_handler_field_drupalcon',
+      'handler' => 'drupalcons_views_handler_field',
     ),
   );
 
@@ -66,7 +66,7 @@ function drupalcons_views_data() {
     'help' => t('Month of the DrupalCon.'),
     // Information for displaying the year.
     'field' => array(
-      'handler' => 'drupalcons_views_handler_field_drupalcon',
+      'handler' => 'drupalcons_views_handler_field',
     ),
   );
 
