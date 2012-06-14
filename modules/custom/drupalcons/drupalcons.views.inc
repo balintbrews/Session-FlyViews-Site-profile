@@ -40,6 +40,16 @@ function drupalcons_views_data() {
     ),
   );
 
+  // Country
+  $data['drupalcon']['country'] = array(
+    'title' => t('Country'),
+    'help' => t('Country of the DrupalCon.'),
+    // Information for displaying the country.
+    'field' => array(
+      'handler' => 'drupalcons_views_handler_field_drupalcon',
+    ),
+  );
+
   return $data;
 }
 
