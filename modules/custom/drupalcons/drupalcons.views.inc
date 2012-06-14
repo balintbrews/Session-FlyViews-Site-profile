@@ -60,6 +60,16 @@ function drupalcons_views_data() {
     ),
   );
 
+  // Month
+  $data['drupalcon']['month'] = array(
+    'title' => t('Month'),
+    'help' => t('Month of the DrupalCon.'),
+    // Information for displaying the year.
+    'field' => array(
+      'handler' => 'drupalcons_views_handler_field_drupalcon',
+    ),
+  );
+
   return $data;
 }
 
