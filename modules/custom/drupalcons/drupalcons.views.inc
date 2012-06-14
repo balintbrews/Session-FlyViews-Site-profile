@@ -50,6 +50,16 @@ function drupalcons_views_data() {
     ),
   );
 
+  // Year
+  $data['drupalcon']['year'] = array(
+    'title' => t('Year'),
+    'help' => t('Year of the DrupalCon.'),
+    // Information for displaying the year.
+    'field' => array(
+      'handler' => 'drupalcons_views_handler_field_drupalcon',
+    ),
+  );
+
   return $data;
 }
 
