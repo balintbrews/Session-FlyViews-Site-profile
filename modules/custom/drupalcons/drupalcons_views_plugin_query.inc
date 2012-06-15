@@ -31,8 +31,14 @@ class drupalcons_views_plugin_query extends views_plugin_query {
    * Builds the necessary info to execute the query.
    */
   function build(&$view) {
-
     $view->build_info['drupalcons_request'] = $this->request;
+
+    // Adding arguments to the request.
+    if (isset($view->query->request_arguments)) {
+      foreach ($view->query->request_arguments as $arg_key => $arg_value) {
+        $view->build_info['drupalcons_request']->addArgument($arg_key, $arg_value);
+      }
+    }
   }
 
   /**
@@ -46,7 +52,6 @@ class drupalcons_views_plugin_query extends views_plugin_query {
 
     $view->result = array();
     $view->result = $request->execute();
-    dpm($view->result);
 
     $view->execute_time = microtime(true) - $start;
   }
