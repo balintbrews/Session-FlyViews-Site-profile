@@ -70,6 +70,16 @@ function drupalcons_views_data() {
     ),
   );
 
+  // Attendees
+  $data['drupalcon']['attendees'] = array(
+    'title' => t('Attendees'),
+    'help' => t('Number of attendees of the DrupalCon.'),
+    // Information for displaying the year.
+    'field' => array(
+      'handler' => 'drupalcons_views_handler_field_numeric',
+    ),
+  );
+
   return $data;
 }
 
