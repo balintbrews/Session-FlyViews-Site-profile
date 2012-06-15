@@ -2,7 +2,7 @@
 
 /**
  * @file drupalcons_views_handler_field_numeric.inc
- * Basic "DrupalCon" field handler.
+ * "DrupalCon" numeric field handler.
  */
 
 /**
