@@ -58,6 +58,9 @@ function drupalcons_views_data() {
     'field' => array(
       'handler' => 'drupalcons_views_handler_field',
     ),
+    'filter' => array(
+      'handler' => 'drupalcons_views_handler_filter_equality_year',
+    ),
   );
 
   // Month
