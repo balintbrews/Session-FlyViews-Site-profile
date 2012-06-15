@@ -90,6 +90,16 @@ function drupalcons_views_data() {
     ),
   );
 
+  // Photo
+  $data['drupalcon']['photo'] = array(
+    'title' => t('Photo'),
+    'help' => t('A photo about the city.'),
+    // Information for displaying the photo.
+    'field' => array(
+      'handler' => 'drupalcons_views_handler_field_image',
+    ),
+  );
+
   return $data;
 }
 
