@@ -12,4 +12,4 @@ files[] = handlers/drupalcons_views_handler_field.inc
 files[] = handlers/drupalcons_views_handler_field_numeric.inc
 files[] = handlers/drupalcons_views_handler_field_image.inc
 files[] = handlers/drupalcons_views_handler_field_link.inc
-
+files[] = handlers/drupalcons_views_handler_filter_equality.inc
