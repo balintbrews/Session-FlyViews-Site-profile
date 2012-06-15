@@ -80,6 +80,16 @@ function drupalcons_views_data() {
     ),
   );
 
+  // About the city
+  $data['drupalcon']['about_the_city'] = array(
+    'title' => t('About the city'),
+    'help' => t('About the city of the DrupalCon.'),
+    // Information for displaying the year.
+    'field' => array(
+      'handler' => 'drupalcons_views_handler_field',
+    ),
+  );
+
   return $data;
 }
 
