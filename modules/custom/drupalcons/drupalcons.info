@@ -11,4 +11,5 @@ files[] = drupalcons_views_plugin_query.inc
 files[] = handlers/drupalcons_views_handler_field.inc
 files[] = handlers/drupalcons_views_handler_field_numeric.inc
 files[] = handlers/drupalcons_views_handler_field_image.inc
+files[] = handlers/drupalcons_views_handler_field_link.inc
 

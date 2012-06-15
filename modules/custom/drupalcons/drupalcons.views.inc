@@ -100,6 +100,16 @@ function drupalcons_views_data() {
     ),
   );
 
+  // Photo credit
+  $data['drupalcon']['photo_credit'] = array(
+    'title' => t('Photo credit'),
+    'help' => t('Credit of the photo about the city.'),
+    // Information for displaying the credit of the photo as a link.
+    'field' => array(
+      'handler' => 'drupalcons_views_handler_field_link',
+    ),
+  );
+
   return $data;
 }
 
