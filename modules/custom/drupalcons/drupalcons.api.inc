@@ -25,12 +25,25 @@ class DrupalConsAPIRequest {
   // API call arguments. Use DrupalConsAPIRequest->addArgument() to set.
   private $arguments = array();
 
+  // The ID of a particular DrupalCon. If it's greater than 0, it means,
+  // the request goes for on certain DrupalCon, no arguments.
+  private $drupalcon_id = 0;
+
   /**
    * Constructor.
    */
   public function __construct() {
     $this->api_url = variable_get('drupalcons_api_url', DRUPALCONS_DEFAULT_API_URL);
     $this->debug_mode = variable_get('drupalcons_debug_mode', DRUPALCONS_DEFAULT_DEBUG_MODE);
+  }
+
+  /**
+   * Sets the ID for the DrupalCon. The execute() method will ignore
+   * the arguments, and the request will go for a certain DrupalCon.
+   */
+  public function getItem($id) {
+    $this->drupalcon_id = $id;
+    return $this;
   }
 
   /**
@@ -45,11 +58,15 @@ class DrupalConsAPIRequest {
    * Executes the request. Returns the response data.
    */
   public function execute() {
-    $options = array(
-      'query' => $this->arguments,
-      'absolute' => TRUE
-    );
-    $request_url = url($this->api_url, $options);
+    $options = array();
+    $options['absolute'] = TRUE;
+    if ($this->drupalcon_id > 0) {
+      $request_url = url($this->api_url . '/' . $this->drupalcon_id, $options);
+    }
+    else {
+      $options['query'] = $this->arguments;
+      $request_url = url($this->api_url, $options);
+    }
     if ($this->debug_mode) {
       drupal_set_message(t('Request URL: !url', array('!url' => urldecode($request_url))));
     }
@@ -84,6 +101,9 @@ class DrupalConsAPIRequest {
     $parsed_data = array();
     foreach ($data->drupalcons as $item) {
       $parsed_data[$item->drupalcon->id] = $item->drupalcon;
+    }
+    if ($this->drupalcon_id > 0) {
+      return reset($parsed_data);
     }
     return $parsed_data;
   }

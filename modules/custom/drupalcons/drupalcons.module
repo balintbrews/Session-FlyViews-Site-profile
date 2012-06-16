@@ -63,6 +63,9 @@ function drupalcons_ctools_plugin_directory($module, $plugin) {
  * Page callback; API test page.
  */
 function drupalcons_api_test_page() {
+  $output_method = (module_exists('devel')) ? 'dpm' : 'var_dump';
+
+  // Test the request, when we want to get a set of items.
   $request = new DrupalConsAPIRequest();
   $result = $request
     ->addArgument('year', 2005)
@@ -70,12 +73,16 @@ function drupalcons_api_test_page() {
     ->addArgument('attendees', array('value' => 100))
     ->execute();
 
-  if (module_exists('devel')) {
-    dpm($result);
-  }
-  else {
-    var_dump($result);
-  }
+  $output_method($result);
+
+  // Test the request when we want to get a certain item.
+  $request = new DrupalConsAPIRequest();
+  $result = $request
+    ->getItem(7)
+    ->execute();
+
+  $output_method($result);
+
   return t('Testing...');
 }
 
