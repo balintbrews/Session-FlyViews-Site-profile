@@ -26,6 +26,11 @@ projects[diff][subdir] = contrib
 projects[features][version] = 1.0-rc2
 projects[features][subdir] = contrib
 
+; Panels
+projects[panels][version] = 3.2
+projects[panels][subdir] = contrib
+
+
 ; Strongarm
 projects[strongarm][version] = 2.0-rc1
 projects[strongarm][subdir] = contrib
