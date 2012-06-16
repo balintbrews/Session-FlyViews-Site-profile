@@ -51,6 +51,15 @@ function drupalcons_views_api() {
 }
 
 /**
+ * Implements hook_ctools_plugin_directory().
+ */
+function drupalcons_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'ctools' && !empty($plugin)) {
+    return "plugins/$plugin";
+  }
+}
+
+/**
  * Page callback; API test page.
  */
 function drupalcons_api_test_page() {
