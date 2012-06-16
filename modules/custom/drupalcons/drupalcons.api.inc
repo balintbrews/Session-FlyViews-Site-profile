@@ -5,7 +5,7 @@
  */
 
 /**
- * Simple class for puttig together a URL for the API call, and doing an HTTP request
+ * Simple class for putting together a URL for the API call, and doing an HTTP request
  * for retrieving information about DrupalCons.
  * All public methods return $this and can be chained together, except the execute(),
  * which returns the response data.
