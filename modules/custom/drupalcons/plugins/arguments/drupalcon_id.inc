@@ -6,7 +6,7 @@
  */
 
 $plugin = array(
-  'title' => t('DrupalCon'),
+  'title' => t('DrupalCon: ID'),
   'keyword' => 'drupalcon',
   'description' => t('Creates a DrupalCon context from the argument.'),
   'context' => 'drupalcon_argument_context',
@@ -16,16 +16,17 @@ $plugin = array(
   ),
 );
 
-
-function drupalcon_argument_context($arg, $conf = NULL, $empty = FALSE) {
+function drupalcon_argument_context($arg = NULL, $conf = NULL, $empty = FALSE) {
   if ($empty) {
     return ctools_context_create_empty('drupalcon');
   }
   if (!is_numeric($arg)) {
     return FALSE;
   }
-
-  // @todo: Do the request here.
+  $request = new DrupalConsAPIRequest();
+  $drupalcon = $request
+    ->getItem($arg)
+    ->execute();
 
   return ctools_context_create('drupalcon', $drupalcon);
 }
