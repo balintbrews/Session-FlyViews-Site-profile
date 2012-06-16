@@ -69,8 +69,7 @@ function drupalcons_api_test_page() {
   $request = new DrupalConsAPIRequest();
   $result = $request
     ->addArgument('year', 2005)
-    ->addArgument('attendees_op', '=')
-    ->addArgument('attendees', array('value' => 100))
+    ->addArgument('attendees', array('min' => 80, 'max' => 120))
     ->execute();
 
   $output_method($result);
