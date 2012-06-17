@@ -24,7 +24,6 @@ function drupalcons_views_data() {
   $data['drupalcon']['id'] = array(
     'title' => t('ID'),
     'help' => t('Identifier of the DrupalCon.'),
-    // Information for displaying the ID.
     'field' => array(
       'handler' => 'drupalcons_views_handler_field',
     ),
@@ -34,7 +33,6 @@ function drupalcons_views_data() {
   $data['drupalcon']['city'] = array(
     'title' => t('City'),
     'help' => t('City of the DrupalCon.'),
-    // Information for displaying the city.
     'field' => array(
       'handler' => 'drupalcons_views_handler_field',
     ),
@@ -44,7 +42,6 @@ function drupalcons_views_data() {
   $data['drupalcon']['country'] = array(
     'title' => t('Country'),
     'help' => t('Country of the DrupalCon.'),
-    // Information for displaying the country.
     'field' => array(
       'handler' => 'drupalcons_views_handler_field',
     ),
@@ -54,7 +51,6 @@ function drupalcons_views_data() {
   $data['drupalcon']['year'] = array(
     'title' => t('Year'),
     'help' => t('Year of the DrupalCon.'),
-    // Information for displaying the year.
     'field' => array(
       'handler' => 'drupalcons_views_handler_field',
     ),
@@ -70,7 +66,6 @@ function drupalcons_views_data() {
   $data['drupalcon']['month'] = array(
     'title' => t('Month'),
     'help' => t('Month of the DrupalCon.'),
-    // Information for displaying the month.
     'field' => array(
       'handler' => 'drupalcons_views_handler_field',
     ),
@@ -80,7 +75,6 @@ function drupalcons_views_data() {
   $data['drupalcon']['attendees'] = array(
     'title' => t('Attendees'),
     'help' => t('Number of attendees of the DrupalCon.'),
-    // Information for displaying the number of attendees.
     'field' => array(
       'handler' => 'drupalcons_views_handler_field_numeric',
     ),
@@ -93,7 +87,6 @@ function drupalcons_views_data() {
   $data['drupalcon']['about_the_city'] = array(
     'title' => t('About the city'),
     'help' => t('About the city of the DrupalCon.'),
-    // Information for displaying the "About the city" field.
     'field' => array(
       'handler' => 'drupalcons_views_handler_field',
     ),
@@ -103,7 +96,6 @@ function drupalcons_views_data() {
   $data['drupalcon']['photo'] = array(
     'title' => t('Photo'),
     'help' => t('A photo about the city.'),
-    // Information for displaying the photo.
     'field' => array(
       'handler' => 'drupalcons_views_handler_field_image',
     ),
@@ -113,7 +105,6 @@ function drupalcons_views_data() {
   $data['drupalcon']['photo_credit'] = array(
     'title' => t('Photo credit'),
     'help' => t('Credit of the photo about the city.'),
-    // Information for displaying the credit of the photo as a link.
     'field' => array(
       'handler' => 'drupalcons_views_handler_field_link',
     ),
